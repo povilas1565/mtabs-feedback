@@ -40,9 +40,8 @@ public class FeedbackController {
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(feedback.getEmail());
-        mailMessage.setTo("agoramas.net@gmail.com");
+        mailMessage.setTo("agoramas.office@gmail.com");
         mailMessage.setSubject("New feedback from " + feedback.getName() + feedback.getTel());
-        mailMessage.setText(feedback.getFeedback());
 
         // Send mail
         mailSender.send(mailMessage);

@@ -30,9 +30,6 @@ public class Feedback {
     @Min(7)
     private String tel;
 
-    @NotNull
-    @Min(10)
-    private String feedback;
 
     public String getName() {
         return name;
@@ -46,7 +43,6 @@ public class Feedback {
         return tel;
     }
 
-    public String getFeedback() { return feedback; }
 
     public void setName(String name) {
         this.name = name;
@@ -60,7 +56,4 @@ public class Feedback {
         this.tel = tel;
     }
 
-    public void setFeedback(String feedback) {
-        this.feedback = feedback;
-    }
 }
