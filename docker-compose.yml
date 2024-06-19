@@ -1,0 +1,34 @@
+version: '3.8'
+
+
+services:
+  db:
+    image: postgres:11.22-alpine
+    container_name: postgresql
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=feedback
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql
+
+  app:
+    image: 'mtabs-feedback:1.0.0'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    expose:
+      - "8081"
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/feedback
+
+volumes:
+  db-data:
