@@ -1,0 +1,6 @@
+com\agas\feedback\FeedbackApplication.class
+com\agas\feedback\models\Feedback.class
+com\agas\feedback\configuration\WebSecurityConfig.class
+com\agas\feedback\configuration\SwaggerConfig.class
+com\agas\feedback\services\EmailConfig.class
+com\agas\feedback\controllers\FeedbackController.class
