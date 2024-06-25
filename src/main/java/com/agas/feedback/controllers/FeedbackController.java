@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ValidationException;
 
@@ -20,6 +17,7 @@ import javax.validation.ValidationException;
 @Slf4j
 @RequestMapping("/")
 @Api
+@CrossOrigin
 public class FeedbackController {
 
     @Autowired
@@ -43,7 +41,6 @@ public class FeedbackController {
         // Create mailform instance
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom(feedback.getEmail());
         mailMessage.setTo("agoramas.office@gmail.com");
         mailMessage.setSubject("New feedback from " + feedback.getName() + feedback.getTel());
 

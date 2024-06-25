@@ -1,4 +1,3 @@
 FROM openjdk:11-jdk-slim
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} mtabs-feedbcak-1.0.0.jar
+COPY target/mtabs-feedback-1.0.0.jar mtabs-feedback-1.0.0.jar
 ENTRYPOINT ["java", "-jar", "mtabs-feedback-1.0.0.jar"]
